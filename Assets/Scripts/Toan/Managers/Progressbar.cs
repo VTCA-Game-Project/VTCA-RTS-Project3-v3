@@ -52,6 +52,7 @@ namespace Manager
             while(progress < 1)
             {
                 progress = Mathf.MoveTowards(progress, 1.0f, 0.1f);
+                ProgressImg.fillAmount = progress;
                 yield return null;
             }
 

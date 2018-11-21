@@ -31,9 +31,6 @@ public class BuildControl : MonoBehaviour
     public Vector2 BuildSize = new Vector2();
     public GameObject Map;
     private MapControl ControlMap;
-    private List<int> BuildCount;
-    private List<CubeManager> ListCubeWasUse;
-    private List<Vector2> ListBuildSize;
     public int BuildPrice;
     void Start()
     {
@@ -43,16 +40,11 @@ public class BuildControl : MonoBehaviour
         {
             ControlMap = Map.GetComponent<MapControl>();
         }
-        BuildCount = new List<int>();
-        ListCubeWasUse = new List<CubeManager>();
-        ListBuildSize = new List<Vector2>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
-
         if (OnselectTaget == true)
         {
             foreach (CubeManager cube in ListInSelect)
@@ -112,7 +104,7 @@ public class BuildControl : MonoBehaviour
             if (OnholdTaget)
             {
                 if (Input.GetMouseButtonDown(1))
-                { 
+                {
                     for (int k = 0; k < ListInSelect.Count; k++)
                     {
                         ListInSelect[k].SetState("None");
@@ -134,26 +126,25 @@ public class BuildControl : MonoBehaviour
                     {
                         if (ListInSelect.Count < BuildSize.x * BuildSize.y)
                         { return; }
+                        GameObject NewGO = Instantiate(BuildModel, new Vector3(LatPoint.x + ((int)BuildSize.x / 2), 0, LatPoint.y + ((int)BuildSize.y / 2)), Quaternion.identity);
+                        Construct construct = NewGO.GetComponentInChildren<Construct>();
                         for (int k = 0; k < ListInSelect.Count; k++)
                         {
 
                             ListInSelect[k].CanBuild = false;
                             ListInSelect[k].SetState("None");
                             ListInSelect[k].OnraycastIn();
-                            ListBuildCube.Add(ListInSelect[k]);
+                            construct.CellInfo.Add(ListInSelect[k]);
                         }
 
-                      
-                        GameObject NewGO = Instantiate(BuildModel, new Vector3(LatPoint.x+((int)BuildSize.x/2), 0, LatPoint.y+((int)BuildSize.y/2)), Quaternion.identity);
-                        Construct construct = NewGO.GetComponentInChildren<Construct>();
                         construct.Group = EnumCollection.Group.Player;
                         SoundManager.instanece.PlayEffect(2);
                         NewGO.SetActive(true);
-                        construct.Build();                                          
+                        construct.Build();
                         ListInSelect.Clear();
                         ResetTaget();
                         uiControl.GetACtiveBuild(construct.Player);
-                       
+
                     }
                 }
 
@@ -168,6 +159,19 @@ public class BuildControl : MonoBehaviour
 
 
 
+        }
+    }
+
+    private void LateUpdate()
+    {
+        List<CubeManager> temp = MapControl.getListGo();
+        ListBuildCube.Clear();
+        foreach (CubeManager cube in temp)
+        {
+            if (cube.CanBuild == false)
+            {
+                ListBuildCube.Add(cube);
+            }
         }
     }
     private void setBuildSize(Vector2 size, CubeManager currentpoint)
@@ -193,16 +197,13 @@ public class BuildControl : MonoBehaviour
                 for (int j = 0; j < size.y; j++)
                 {
 
-                    CubeManager sub = ControlMap.GetCubeBylocal(currentpoint.CodeLocal + new Vector2(i, j));
+                    CubeManager sub = MapControl.GetCubeBylocal(currentpoint.CodeLocal + new Vector2(i, j));
                     if (sub != null)
 
                     {
                         ListInSelect.Add(sub);
 
                     }
-
-
-
                 }
             }
 
@@ -239,24 +240,24 @@ public class BuildControl : MonoBehaviour
         return ListInSelect[taget].transform;
     }
 
-    public void letOnDestroy(Vector3 taget,Vector2 buildsize)
+    public void letOnDestroy(Vector3 taget, Vector2 buildsize)
     {
         Vector2 deadtaget = new Vector2(taget.x, taget.z);
-        
+
         for (int i = 0; i < buildsize.x; i++)
         {
             for (int j = 0; j < buildsize.y; j++)
             {
 
-                CubeManager sub = ControlMap.GetCubeBylocal(deadtaget + new Vector2(i, j));
+                CubeManager sub = MapControl.GetCubeBylocal(deadtaget + new Vector2(i, j));
                 Debug.Log(sub.CodeLocal);
                 if (sub != null)
 
                 {
-                  foreach( CubeManager cube in ListBuildCube)
+                    foreach (CubeManager cube in ListBuildCube)
                     {
 
-                        if(cube.CodeLocal==sub.CodeLocal)
+                        if (cube.CodeLocal == sub.CodeLocal)
                         {
                             sub.CanBuild = true;
                             ListBuildCube.Remove(cube);

@@ -3,6 +3,7 @@ using EnumCollection;
 using Manager;
 using Pattern;
 using RTS_ScriptableObject;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Common
@@ -12,14 +13,14 @@ namespace Common
         public ConstructOffset Offset;
         public Player Player;
         public GameObject destructEffect;
-        public int Hp                       { get; protected set; }
-        public Group Group                  { get; set; }
-        public ConstructId Id               { get; protected set; }
-        public ConstructId[] Owned          { get; protected set; }
-        public GameAction AddConstruct      { protected get; set; }
-        public GameAction RemoveConstruct   { protected get; set; }
+        public int Hp { get; protected set; }
+        public Group Group { get; set; }
+        public ConstructId Id { get; protected set; }
+        public ConstructId[] Owned { get; protected set; }
+        public GameAction AddConstruct { protected get; set; }
+        public GameAction RemoveConstruct { protected get; set; }
         private HPBar hpimage;
-        public BuildElement Cellinfo;
+        public List<CubeManager> CellInfo;
         public override Vector3 Position
         {
             get
@@ -32,7 +33,7 @@ namespace Common
         }
         public override Vector3 Velocity { get { return Vector3.zero; } }
         public override bool IsDead { get; protected set; }
-       
+
         protected virtual void Awake()
         {
             if (Group == Group.NPC)
@@ -49,9 +50,9 @@ namespace Common
         }
         protected virtual void Start()
         {
-           
-            AddConstruct        = Player.AddConstruct;
-            RemoveConstruct     = Player.RemoveConstruct;
+
+            AddConstruct = Player.AddConstruct;
+            RemoveConstruct = Player.RemoveConstruct;
 
             hpimage = this.GetComponentInChildren<HPBar>();
             InitOffset();
@@ -88,7 +89,7 @@ namespace Common
         }
         protected void UnlockConstruct()
         {
-            if(AddConstruct == null) AddConstruct = Player.AddConstruct;
+            if (AddConstruct == null) AddConstruct = Player.AddConstruct;
             AddConstruct(this);
         }
 
@@ -120,10 +121,14 @@ namespace Common
             RemoveConstruct(this);
             Destroy(transform.root.gameObject);
             Destroy(effect, 0.5f);
-            if (Cellinfo != null)
+            if (CellInfo != null)
             {
-               
-                Cellinfo.letOnDestroy(transform.position);
+
+                foreach (CubeManager cube in CellInfo)
+                {
+
+                    MapControl.SetvaluesCube(cube);
+                }
             }
         }
 

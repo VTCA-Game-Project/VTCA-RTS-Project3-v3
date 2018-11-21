@@ -28,7 +28,7 @@ public class HPBar : MonoBehaviour {
     {
         transform.eulerAngles = Camera.main.transform.eulerAngles;
         if (agent != null)
-        {
+        {         
             hpbot.SetActive(agent.IsSelected);
         }
         else

@@ -18,6 +18,7 @@ public class SelectTeam : MonoBehaviour {
     public void OnOrcClick()
     {
         Singleton.classname = "Orc";
+        Progressbar.Instance.LoadScene(3);
         // LoadSceneTagetButton.instanece.LoadSceneNum(3);
     }
 }
