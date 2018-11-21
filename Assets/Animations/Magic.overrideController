@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Magic
+  m_Controller: {fileID: 9100000, guid: 3cfe24e7f4fea4e478252afaf63a6859, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: b0ca40fbd5d112a4eaa593f7067640f5, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 00ab9147e3a7e78418e7a941c570b1b4, type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: dd2fe378dca745d47b23ddbe61916035, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: adc0631e34771904882ca8e09173aae9, type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: eb33a91c3485df44c85d23085f5d646d, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: f31db35057f173b41ad4e8325bec87a6, type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: 52fe9bf8b484b5c4b9d01961e5e042bb, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 6690e0d249965464eafaa19f5e04878c, type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: 97797603c1b4c6f4e8e715a472aa24df, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 7d08ac2da51430d468975fca86171fc9, type: 3}
