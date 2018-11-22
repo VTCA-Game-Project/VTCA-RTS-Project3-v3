@@ -39,9 +39,9 @@ GameObject:
   - component: {fileID: 33983610158317534}
   - component: {fileID: 23622343190373178}
   - component: {fileID: 111355682368844474}
-  - component: {fileID: 114775798482330876}
   - component: {fileID: 65751038115649002}
   - component: {fileID: 114037852809448984}
+  - component: {fileID: 114775798482330876}
   m_Layer: 0
   m_Name: throne_atlas
   m_TagString: Untagged
@@ -326,7 +326,7 @@ MonoBehaviour:
   Offset: {fileID: 11400000, guid: 0ce3e0bf55eb34446a8915b81ef18de7, type: 2}
   Player: {fileID: 0}
   destructEffect: {fileID: 100006, guid: e076683e0305e35498b8e8834978c0fa, type: 2}
-  Cellinfo: {fileID: 0}
+  CellInfo: []
 --- !u!114 &114189066826718520
 MonoBehaviour:
   m_ObjectHideFlags: 1

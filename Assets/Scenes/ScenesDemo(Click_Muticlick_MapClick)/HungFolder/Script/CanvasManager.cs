@@ -1,6 +1,7 @@
 ﻿using DelegateCollection;
 using EnumCollection;
 using Manager;
+using Pattern;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -51,10 +52,11 @@ public class CanvasManager : MonoBehaviour {
     }
     public void ReturnClick()
     {
-
         Destroy(SoundManager.instanece.gameObject);
         Time.timeScale = 1f;
-        LoadSceneTagetButton.instanece.LoadSceneNum(0);
+        // LoadSceneTagetButton.instanece.LoadSceneNum(0);
+        Progressbar.Instance.QuickLoad(0);
+        Singleton.classname = "";
     }
 }
 

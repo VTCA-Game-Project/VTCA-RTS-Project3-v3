@@ -11,8 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2351a8f3c21a4945840cce76bef70aa, type: 3}
   m_Name: OrcTanker
   m_EditorClassIdentifier: 
-  MaxHP: 40
-  Damage: 2
+  MaxHP: 45
+  Damage: 4
   Seeking: 1
   MaxSpeed: 3
   Cohesion: 0.01

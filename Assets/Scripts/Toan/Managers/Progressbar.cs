@@ -24,7 +24,7 @@ namespace Manager
             Panel.SetActive(false);
         }
 
-        private void QuickLoad(int index)
+        public void QuickLoad(int index)
         {
             SceneManager.LoadScene(index);
         }

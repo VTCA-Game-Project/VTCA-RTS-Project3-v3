@@ -116,6 +116,7 @@ namespace Common.Building
             AttackRange = Offset.AttackRadius;
             DelayAttack = Offset.DelayAttack;
             ShootForce  = Offset.AttackForce;
+            base.InitOffset();
         }
     }
 }

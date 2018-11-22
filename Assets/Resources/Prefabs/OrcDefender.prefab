@@ -73,6 +73,7 @@ GameObject:
   - component: {fileID: 23387737140544698}
   - component: {fileID: 65410965884228348}
   - component: {fileID: 114186008679749476}
+  - component: {fileID: 114019532413877232}
   m_Layer: 0
   m_Name: guard_tower
   m_TagString: Untagged
@@ -325,6 +326,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114019532413877232
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1350259374736896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e45ac349962161b43bbc533001e8bdf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Debug: 0
+  Index: 0
 --- !u!114 &114140061379299590
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -387,6 +401,7 @@ MonoBehaviour:
   Offset: {fileID: 11400000, guid: 3ff97ee34f556f5439b4b652dc6c3ca4, type: 2}
   Player: {fileID: 0}
   destructEffect: {fileID: 100006, guid: e076683e0305e35498b8e8834978c0fa, type: 2}
+  CellInfo: []
   Arrow: {fileID: 54509471050829448, guid: 224638d4de7ac6349b1ddf3592414982, type: 2}
   LauncherPoint: {fileID: 4725263072218306}
 --- !u!114 &114300906246561864

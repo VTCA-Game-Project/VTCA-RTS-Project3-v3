@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 23537471285104686}
   - component: {fileID: 114405499248046994}
   - component: {fileID: 65200271385864408}
+  - component: {fileID: 114626267556275612}
   m_Layer: 0
   m_Name: mine_atlas
   m_TagString: Untagged
@@ -337,6 +338,7 @@ MonoBehaviour:
   Offset: {fileID: 11400000, guid: bc1424984bb3dea4a83e88183e0eebdf, type: 2}
   Player: {fileID: 0}
   destructEffect: {fileID: 100006, guid: e076683e0305e35498b8e8834978c0fa, type: 2}
+  CellInfo: []
   RefreshTime: 10
 --- !u!114 &114477166471462980
 MonoBehaviour:
@@ -396,6 +398,19 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &114626267556275612
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1439331826566238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e45ac349962161b43bbc533001e8bdf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Debug: 0
+  Index: 0
 --- !u!114 &114754667770453308
 MonoBehaviour:
   m_ObjectHideFlags: 1

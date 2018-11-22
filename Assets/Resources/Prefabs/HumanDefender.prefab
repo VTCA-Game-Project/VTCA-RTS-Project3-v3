@@ -68,9 +68,9 @@ GameObject:
   - component: {fileID: 4303542605344552}
   - component: {fileID: 33206956286168560}
   - component: {fileID: 23062787669544012}
-  - component: {fileID: 114978135251334422}
   - component: {fileID: 65659371461948716}
   - component: {fileID: 114019011665243218}
+  - component: {fileID: 114978135251334422}
   m_Layer: 11
   m_Name: tower
   m_TagString: Untagged
@@ -340,7 +340,7 @@ MonoBehaviour:
   Offset: {fileID: 11400000, guid: 3ff97ee34f556f5439b4b652dc6c3ca4, type: 2}
   Player: {fileID: 0}
   destructEffect: {fileID: 100006, guid: e076683e0305e35498b8e8834978c0fa, type: 2}
-  Cellinfo: {fileID: 0}
+  CellInfo: []
   Arrow: {fileID: 54509471050829448, guid: 224638d4de7ac6349b1ddf3592414982, type: 2}
   LauncherPoint: {fileID: 4141229242096026}
 --- !u!114 &114132946689566346

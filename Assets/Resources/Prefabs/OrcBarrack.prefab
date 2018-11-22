@@ -107,6 +107,7 @@ GameObject:
   - component: {fileID: 111630852390058004}
   - component: {fileID: 114419224275914840}
   - component: {fileID: 65511438409047288}
+  - component: {fileID: 114970633132331268}
   m_Layer: 0
   m_Name: barracks
   m_TagString: Untagged
@@ -425,6 +426,19 @@ MonoBehaviour:
   m2: {fileID: 2100000, guid: 9a633e3afbe7a3646981e50eec4a6329, type: 2}
   mytaget: {fileID: 1711757244432984}
   Mychild: {fileID: 1698503212085722}
+--- !u!114 &114970633132331268
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1731735166484110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e45ac349962161b43bbc533001e8bdf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Debug: 0
+  Index: 0
 --- !u!114 &114971725763648700
 MonoBehaviour:
   m_ObjectHideFlags: 1

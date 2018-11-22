@@ -55,9 +55,9 @@ GameObject:
   - component: {fileID: 4787319125225338}
   - component: {fileID: 33171280066231364}
   - component: {fileID: 23961090394626778}
-  - component: {fileID: 114091180290130274}
   - component: {fileID: 65595316352112958}
   - component: {fileID: 114063721968907926}
+  - component: {fileID: 114091180290130274}
   m_Layer: 11
   m_Name: mine
   m_TagString: Untagged
@@ -375,7 +375,7 @@ MonoBehaviour:
   Offset: {fileID: 11400000, guid: bc1424984bb3dea4a83e88183e0eebdf, type: 2}
   Player: {fileID: 0}
   destructEffect: {fileID: 100006, guid: e076683e0305e35498b8e8834978c0fa, type: 2}
-  Cellinfo: {fileID: 0}
+  CellInfo: []
   RefreshTime: 10
 --- !u!114 &114091180290130274
 MonoBehaviour:

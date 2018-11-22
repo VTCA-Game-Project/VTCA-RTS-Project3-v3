@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ee6f106fd95cc84c8268f6d78a8c2e0, type: 3}
   m_Name: Refinery
   m_EditorClassIdentifier: 
-  MaxHP: 50
+  MaxHP: 80
   Damage: 0
   AttackRadius: 0
   DelayAttack: 0

@@ -36,6 +36,7 @@ public class ButtonDown : MonoBehaviour, IPointerDownHandler
    
     public void OnPointerDown(PointerEventData eventData)
     {
+        if (eventData == null) return;
         string even = eventData.pointerEnter.name.ToString();
         switch (even)
         {
