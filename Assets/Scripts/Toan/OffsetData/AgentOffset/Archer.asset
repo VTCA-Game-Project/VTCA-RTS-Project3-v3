@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHP: 10
   Damage: 3
-  Seeking: 0.6
+  Seeking: 1
   MaxSpeed: 4
   Cohesion: 0.1
   Separation: 1

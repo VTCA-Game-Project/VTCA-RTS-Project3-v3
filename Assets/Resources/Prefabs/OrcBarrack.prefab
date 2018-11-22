@@ -181,7 +181,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1711757244432984}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 13.159702, y: 8.169855e-17, z: 12.706245}
+  m_LocalPosition: {x: 13.159702, y: 0, z: 12.706245}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4029141907072058}
@@ -368,6 +368,7 @@ MonoBehaviour:
   Offset: {fileID: 11400000, guid: e9af658bd8a6943439f9277e7e5d4a39, type: 2}
   Player: {fileID: 0}
   destructEffect: {fileID: 100006, guid: e076683e0305e35498b8e8834978c0fa, type: 2}
+  CellInfo: []
 --- !u!114 &114729447549759990
 MonoBehaviour:
   m_ObjectHideFlags: 1

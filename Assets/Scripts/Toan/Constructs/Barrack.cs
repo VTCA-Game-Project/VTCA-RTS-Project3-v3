@@ -43,15 +43,14 @@ namespace Common.Building
         }
 
         public void Produce(System.Enum type)
-        {
-          
+        {          
             GameObject prefab = GetSoldier(type);
             if(prefab != null)
             {
-                AIAgent agent = Instantiate(prefab, transform.position, Quaternion.identity).GetComponent<AIAgent>();
+                AIAgent agent = Instantiate(prefab, transform.root.position, Quaternion.identity).GetComponent<AIAgent>();
                 agent.Owner = Player;
                 agent.gameObject.SetActive(true);
-                agent.SetTarget(TargetType.Place, Vector3.ProjectOnPlane(transform.position + transform.forward * 8,Vector3.up));
+                agent.SetTarget(TargetType.Place, Vector3.ProjectOnPlane(transform.root.position + transform.forward * 8,Vector3.up),null);
             }
         }
     }

@@ -196,7 +196,7 @@ GameObject:
   - component: {fileID: 114220110898611638}
   - component: {fileID: 114257205933527204}
   - component: {fileID: 54476503914587332}
-  - component: {fileID: 65970101988053756}
+  - component: {fileID: 136971213639943716}
   m_Layer: 0
   m_Name: HumanWarrior
   m_TagString: Untagged
@@ -699,7 +699,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1419146589697450}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 58.88344, y: -2.2229015e-17, z: 59.51106}
+  m_LocalPosition: {x: 58.88344, y: 0, z: 59.51106}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4093352738172742}
@@ -1281,18 +1281,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
---- !u!65 &65970101988053756
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1419146589697450}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 2, z: 1}
-  m_Center: {x: 0.26, y: 1.39, z: 0.12}
 --- !u!95 &95568833577990190
 Animator:
   serializedVersion: 3
@@ -1383,7 +1371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1434b568dc251484087a05c7eae56e04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartReachedTargetState: 1
+  StartReachedTargetState: 0
   Owner: {fileID: 0}
   offset: {fileID: 11400000, guid: 9d560003a4687c14688331550bc2333e, type: 2}
   drawGizmos: 0
@@ -1457,6 +1445,19 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!136 &136971213639943716
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1419146589697450}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.75
+  m_Height: 2.5
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.25, z: 0}
 --- !u!137 &137313164472000918
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
