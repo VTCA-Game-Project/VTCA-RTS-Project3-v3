@@ -7,13 +7,15 @@ using UnityEngine.UI;
 using Pattern;
 using RTS_ScriptableObject;
 using Manager;
+using Common.Building;
 
-public class SoilderElement : MonoBehaviour {
+public class SoilderElement : MonoBehaviour
+{
 
     // Use this for initialization
     [HideInInspector]
     public Image CurrentImage;
-     string PlayerClass=Singleton.classname;
+    string PlayerClass = Singleton.classname;
     public Sprite NewImage;
     public GameObject Mouse;
     public Image CountDownIMG;
@@ -25,15 +27,15 @@ public class SoilderElement : MonoBehaviour {
     private int Count;
     Soldier UnitType;
     public Text _cout;
-   
+
     Color newcolo;
-   
+    private MainPlayer mainPlayer;
     private bool CowDownComplete;
     void Start()
     {
         Count = 0;
-     
-        switch(this.gameObject.name)
+
+        switch (this.gameObject.name)
         {
             case "UnitSoilder1":
                 if (PlayerClass == "Orc")
@@ -46,8 +48,8 @@ public class SoilderElement : MonoBehaviour {
                     Price = offset.HumanWarrior;
                     UnitType = Soldier.HumanWarrior;
                 }
-                    break;
-                
+                break;
+
             case "UnitSoilder2":
                 Price = offset.Archer;
                 UnitType = Soldier.Archer;
@@ -75,6 +77,8 @@ public class SoilderElement : MonoBehaviour {
         newcolo = CountDownIMG.color;
         newcolo.a = 0;
         CountDownIMG.color = newcolo;
+
+        mainPlayer = FindObjectOfType<MainPlayer>();
     }
 
     // Update is called once per frame
@@ -114,8 +118,12 @@ public class SoilderElement : MonoBehaviour {
 
             if (createSoldier != null)
             {
-
-                createSoldier(UnitType);
+                if (mainPlayer.GetConstruct(typeof(Barrack)) != null)
+                    createSoldier(UnitType);
+                else
+                {
+                    Count = 0;
+                }
             }
         }
 
@@ -132,7 +140,7 @@ public class SoilderElement : MonoBehaviour {
                 _player.TakeGold(-1 * Price);
             }
         }
-        if (input == "RIGHT"&&Count>=0)
+        if (input == "RIGHT" && Count >= 0)
         {
             if (Count <= 0)
             {
@@ -144,10 +152,10 @@ public class SoilderElement : MonoBehaviour {
                 CountDownIMG.color = newcolo;
                 CowDownComplete = false;
             }
-            if(Count >0)
-            Count--;
+            if (Count > 0)
+                Count--;
 
-           
+
             _player.TakeGold(Price);
         }
 
