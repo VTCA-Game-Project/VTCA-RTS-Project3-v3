@@ -9,7 +9,7 @@ namespace Manager
     {
         private AsyncOperation asyncOperation;
         private float progress;
-
+        public Text Loadingtext;
         public static Progressbar Instance { get; private set; }
         public Image ProgressImg;
         public GameObject Panel;
@@ -34,6 +34,7 @@ namespace Manager
             progress = 0.0f;
             ProgressImg.fillAmount = 0.0f;
             Panel.SetActive(true);
+            Loadingtext.text = "Loading...!";
             StartCoroutine(StartLoadScene(index));
         }
 
@@ -57,8 +58,8 @@ namespace Manager
             }
 
             LoadDone();
-
-            yield return new WaitForSeconds(0.5f);
+            Loadingtext.text = "Loading done ^^!!";
+           yield return new WaitForSeconds(0.5f);
 
             Panel.SetActive(false);
             yield break;
